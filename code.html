@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Drug Effects Information - BioPulse Diagnostics</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Public+Sans:wght@500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config injected via script (from Style Guidance) -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary": "#ffffff",
+                        "tertiary-container": "#0b1c30",
+                        "primary": "#000000",
+                        "on-primary-container": "#7c839b",
+                        "surface": "#f7f9fb",
+                        "on-primary-fixed-variant": "#3f465c",
+                        "outline": "#76777d",
+                        "on-secondary-fixed-variant": "#005049",
+                        "on-tertiary-fixed": "#0b1c30",
+                        "on-background": "#191c1e",
+                        "primary-fixed": "#dae2fd",
+                        "tertiary-fixed": "#d3e4fe",
+                        "surface-variant": "#e0e3e5",
+                        "tertiary": "#000000",
+                        "inverse-on-surface": "#eff1f3",
+                        "on-secondary-fixed": "#00201d",
+                        "surface-dim": "#d8dadc",
+                        "on-primary-fixed": "#131b2e",
+                        "on-surface-variant": "#45464d",
+                        "secondary-fixed-dim": "#6bd8cb",
+                        "on-secondary-container": "#006f66",
+                        "on-surface": "#191c1e",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary": "#006a61",
+                        "on-secondary": "#ffffff",
+                        "surface-container-highest": "#e0e3e5",
+                        "surface-bright": "#f7f9fb",
+                        "tertiary-fixed-dim": "#b7c8e1",
+                        "secondary-container": "#86f2e4",
+                        "outline-variant": "#c6c6cd",
+                        "on-primary": "#ffffff",
+                        "surface-tint": "#565e74",
+                        "surface-container-low": "#f2f4f6",
+                        "inverse-surface": "#2d3133",
+                        "inverse-primary": "#bec6e0",
+                        "secondary-fixed": "#89f5e7",
+                        "on-tertiary-fixed-variant": "#38485d",
+                        "error-container": "#ffdad6",
+                        "primary-container": "#131b2e",
+                        "surface-container-high": "#e6e8ea",
+                        "surface-container": "#eceef0",
+                        "primary-fixed-dim": "#bec6e0",
+                        "on-tertiary-container": "#75859d",
+                        "on-error-container": "#93000a",
+                        "error": "#ba1a1a",
+                        "background": "#f7f9fb",
+                        "on-error": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "unit": "4px",
+                        "margin-mobile": "16px",
+                        "margin-desktop": "48px",
+                        "container-max": "1280px",
+                        "gutter": "24px",
+                        "stack-lg": "32px",
+                        "stack-sm": "8px",
+                        "stack-md": "16px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Public Sans"],
+                        "headline-lg-mobile": ["Public Sans"],
+                        "disclaimer": ["Inter"],
+                        "headline-sm": ["Public Sans"],
+                        "headline-md": ["Public Sans"],
+                        "body-lg": ["Inter"],
+                        "display": ["Public Sans"],
+                        "body-md": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "label-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "disclaimer": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+                        "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "500" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "500" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "display": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface font-body-md antialiased md:hidden pb-24">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface border-b border-outline-variant flex justify-between items-center px-margin-mobile h-16 w-full">
+<button class="flex items-center justify-center text-primary cursor-pointer active:opacity-70 hover:bg-surface-container-high transition-colors p-2 rounded-full">
+<span class="material-symbols-outlined" data-icon="biotech">biotech</span>
+</button>
+<h1 class="font-headline-sm text-headline-sm font-bold text-primary tracking-tight">BioPulse Diagnostics</h1>
+<button class="flex items-center justify-center text-primary cursor-pointer active:opacity-70 hover:bg-surface-container-high transition-colors p-2 rounded-full">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-20 px-margin-mobile flex flex-col gap-stack-lg">
+<!-- Header Section -->
+<section class="flex flex-col gap-stack-sm">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-primary">Pharmacogenomic Profile</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Analysis of drug interactions based on CAD genomic markers (rs10455872, rs1333049).</p>
+</section>
+<!-- Drug Info Card 1: Statins -->
+<article class="bg-surface-container-lowest border border-outline-variant rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+<div class="h-1 bg-secondary w-full"></div>
+<div class="p-stack-md flex flex-col gap-stack-md">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary">Statins (HMG-CoA Reductase Inhibitors)</h3>
+<p class="font-label-md text-label-md text-on-surface-variant mt-1">PRIMARY THERAPY CLASS</p>
+</div>
+<div class="bg-secondary/10 px-2 py-1 rounded border border-secondary/20">
+<span class="font-label-md text-label-md text-secondary">HIGH EFFICACY</span>
+</div>
+</div>
+<!-- Bento Grid for details -->
+<div class="grid grid-cols-2 gap-unit">
+<!-- Efficacy -->
+<div class="bg-surface p-3 rounded flex flex-col gap-1 border border-outline-variant">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-label-md text-label-md text-on-surface-variant">EFFICACY</span>
+<span class="font-body-sm text-body-sm">Optimal response expected. SLCO1B1 genotype normal.</span>
+</div>
+<!-- Risk -->
+<div class="bg-surface p-3 rounded flex flex-col gap-1 border border-outline-variant">
+<span class="material-symbols-outlined text-on-surface-variant" style="font-variation-settings: 'FILL' 1;">warning</span>
+<span class="font-label-md text-label-md text-on-surface-variant">SIDE EFFECTS</span>
+<span class="font-body-sm text-body-sm">Standard risk of myopathy. No genetic variants detected.</span>
+</div>
+<!-- Dosage -->
+<div class="col-span-2 bg-surface-container-low p-3 rounded border border-outline-variant flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface-variant">DOSAGE RECOMMENDATION</span>
+<span class="font-body-md text-body-md font-medium">Standard Dosing Protocols Apply</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant">prescriptions</span>
+</div>
+</div>
+</div>
+</article>
+<!-- Drug Info Card 2: Beta-blockers -->
+<article class="bg-surface-container-lowest border border-outline-variant rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+<div class="h-1 bg-surface-variant w-full"></div>
+<div class="p-stack-md flex flex-col gap-stack-md">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary">Beta-blockers</h3>
+<p class="font-label-md text-label-md text-on-surface-variant mt-1">ADJUNCT THERAPY</p>
+</div>
+<div class="bg-surface-variant px-2 py-1 rounded border border-outline-variant">
+<span class="font-label-md text-label-md text-on-surface-variant">MODERATE METABOLIZER</span>
+</div>
+</div>
+<div class="flex flex-col gap-3">
+<div class="flex gap-3 items-start p-3 bg-surface border border-outline-variant rounded">
+<span class="material-symbols-outlined text-on-surface-variant mt-0.5">science</span>
+<div>
+<span class="font-label-md text-label-md text-on-surface-variant block mb-1">CYP2D6 PHENOTYPE</span>
+<p class="font-body-sm text-body-sm">Intermediate metabolizer profile detected. May require dose adjustments to achieve optimal heart rate control while minimizing adverse effects.</p>
+</div>
+</div>
+</div>
+</div>
+</article>
+<!-- Disclaimer -->
+<div class="bg-tertiary-fixed-dim/20 p-4 rounded-lg border border-tertiary-fixed-dim flex gap-3 items-start mt-stack-md">
+<span class="material-symbols-outlined text-primary mt-0.5">info</span>
+<p class="font-disclaimer text-disclaimer text-on-surface">This pharmacogenomic analysis is for informational purposes only and does not replace professional medical advice. Always consult a healthcare provider before altering medication regimens.</p>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-xl bg-surface border-t border-outline-variant shadow-sm flex justify-around items-center h-20 px-4 pb-safe transition-all duration-200">
+<!-- Dashboard (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant opacity-60 hover:text-secondary cursor-pointer active:scale-95 w-16" href="{{DATA:SCREEN:SCREEN_12}}">
+<span class="material-symbols-outlined text-2xl mb-1" data-icon="dashboard">dashboard</span>
+<span class="font-label-md text-label-md">Dashboard</span>
+</a>
+<!-- Reports (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant opacity-60 hover:text-secondary cursor-pointer active:scale-95 w-16" href="{{DATA:SCREEN:SCREEN_2}}">
+<span class="material-symbols-outlined text-2xl mb-1" data-icon="description">description</span>
+<span class="font-label-md text-label-md">Reports</span>
+</a>
+<!-- Analytics (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant opacity-60 hover:text-secondary cursor-pointer active:scale-95 w-16" href="{{DATA:SCREEN:SCREEN_11}}">
+<span class="material-symbols-outlined text-2xl mb-1" data-icon="insights">insights</span>
+<span class="font-label-md text-label-md">Analytics</span>
+</a>
+<!-- Resources (Active) -->
+<a class="flex flex-col items-center justify-center text-secondary font-bold hover:text-secondary cursor-pointer active:scale-95 w-16" href="{{DATA:SCREEN:SCREEN_4}}">
+<div class="bg-secondary-container px-4 py-1 rounded-full mb-1">
+<span class="material-symbols-outlined text-2xl text-on-secondary-container" data-icon="menu_book" style="font-variation-settings: 'FILL' 1;">menu_book</span>
+</div>
+<span class="font-label-md text-label-md text-on-secondary-container">Resources</span>
+</a>
+<!-- Profile (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant opacity-60 hover:text-secondary cursor-pointer active:scale-95 w-16" href="{{DATA:SCREEN:PROFILE}}">
+<span class="material-symbols-outlined text-2xl mb-1" data-icon="person">person</span>
+<span class="font-label-md text-label-md">Profile</span>
+</a>
+</nav>
+</body></html>
